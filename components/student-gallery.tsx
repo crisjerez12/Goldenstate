@@ -1,11 +1,18 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import Kid from "@/public/kid.jpg";
-const students = Array.from({ length: 40 }, (_, i) => ({
-  id: i + 1,
-  name: `Student ${i + 1}`,
-  image: Kid,
-}));
+import Steven from "@/public/steven.jpg";
+import Pedrolito from "@/public/pedrolito.jpg";
+const students = [
+  {
+    id: 1,
+    name: "Steven Bernardo",
+    image: Steven,
+  },
+  {
+    id: 1,
+    name: "Pedrolito Acosta Jr.",
+    image: Pedrolito,
+  },
+];
 
 export function StudentGalleryComponent() {
   return (
@@ -22,11 +29,14 @@ export function StudentGalleryComponent() {
             key={student.id}
             className="group relative overflow-hidden rounded-lg transition-all duration-300 ease-in-out bg-gray-800 hover:shadow-xl"
           >
-            <div className="aspect-w-1 aspect-h-1 overflow-hidden">
+            <div
+              className="
+           overflow-hidden"
+            >
               <Image
                 src={student.image}
                 alt={student.name}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                className="object-center   transition-transform duration-300 group-hover:scale-110"
               />
             </div>
             <div className="absolute inset-x-0 bottom-0 h-0 group-hover:h-16 overflow-hidden bg-gradient-to-t from-black  to-transparent  transition-all duration-300 ease-in-out bg-opacity-90">

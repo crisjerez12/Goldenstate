@@ -3,19 +3,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import {
   ChevronDown,
   Facebook,
   Twitter,
   Youtube,
-  ChevronLeft,
-  ChevronRight,
   Moon,
   Sun,
 } from "lucide-react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
 import BSIT from "@/public/BSIT.jpg";
