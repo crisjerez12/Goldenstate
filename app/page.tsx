@@ -135,46 +135,15 @@ export default function Page() {
     <div className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}>
       <header className="bg-[#324E9E] dark:bg-gray-800 text-white">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-2">
-            <div className="flex space-x-4">
-              <Button
-                variant="link"
-                className="text-white hover:text-[#FCD228] dark:hover:text-[#FCD228]"
-              >
-                Student Portal
-              </Button>
-              <Button
-                variant="link"
-                className="text-white hover:text-[#FCD228] dark:hover:text-[#FCD228]"
-              >
-                Alumni
-              </Button>
-              <Button
-                variant="link"
-                className="text-white hover:text-[#FCD228] dark:hover:text-[#FCD228]"
-              >
-                Contact Us
-              </Button>
-            </div>
-            <div className="flex space-x-4 items-center">
+          <div className="flex items-center py-2">
+            <div className="flex space-x-4 items-center ml-auto ">
               <Link
                 href="#"
                 className="hover:text-[#FCD228] dark:hover:text-[#FCD228]"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
-              <Link
-                href="#"
-                className="hover:text-[#FCD228] dark:hover:text-[#FCD228]"
-              >
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-[#FCD228] dark:hover:text-[#FCD228]"
-              >
-                <Youtube className="h-5 w-5" />
-              </Link>
+
               <Button size="icon" onClick={toggleDarkMode} className="ml-2 ">
                 {darkMode ? (
                   <Sun className="h-[1.2rem] w-[1.2rem]" />
