@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Kid from "@/public/kid.jpg";
@@ -10,23 +8,10 @@ const students = Array.from({ length: 40 }, (_, i) => ({
 }));
 
 export function StudentGalleryComponent() {
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    setTheme(mediaQuery.matches ? "dark" : "light");
-    const handler = () => setTheme(mediaQuery.matches ? "dark" : "light");
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-
   return (
     <div
-      className={`min-h-screen p-8 transition-colors duration-300 ${
-        theme === "dark"
-          ? "bg-gray-900 text-yellow-100"
-          : "bg-blue-50 text-gray-900"
-      }`}
+      className="min-h-screen p-8 transition-colors duration-300 
+          dark:bg-gray-900 text-yellow-100"
     >
       <h1 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-yellow-500">
         BSIT-4 Student Gallery
@@ -35,9 +20,7 @@ export function StudentGalleryComponent() {
         {students.map((student) => (
           <div
             key={student.id}
-            className={`group relative overflow-hidden rounded-lg transition-all duration-300 ease-in-out ${
-              theme === "dark" ? "bg-gray-800" : "bg-white"
-            } hover:shadow-xl`}
+            className="group relative overflow-hidden rounded-lg transition-all duration-300 ease-in-out bg-gray-800 hover:shadow-xl"
           >
             <div className="aspect-w-1 aspect-h-1 overflow-hidden">
               <Image
@@ -46,13 +29,7 @@ export function StudentGalleryComponent() {
                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
               />
             </div>
-            <div
-              className={`absolute inset-x-0 bottom-0 h-0 group-hover:h-16 transition-all duration-300 overflow-hidden ${
-                theme === "dark"
-                  ? "bg-gradient-to-t from-black  to-transparent  transition-all duration-300 ease-in-out bg-opacity-90"
-                  : "bg-white bg-opacity-90"
-              }`}
-            >
+            <div className="absolute inset-x-0 bottom-0 h-0 group-hover:h-16 overflow-hidden bg-gradient-to-t from-black  to-transparent  transition-all duration-300 ease-in-out bg-opacity-90">
               <p className="text-center py-2 px-4 text-sm font-semibold truncate ">
                 {student.name}
               </p>
